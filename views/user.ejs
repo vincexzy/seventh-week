@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <% if(user){ %>
+    <nav>
+        <h3><%=user.loginname%> 已登陆</h3>
+        <a href="/users/logout">退出</a>
+    </nav>
+
+    <% }else{ %>
+    <form  action="/users/login" method="post">
+      <input type="text" name="loginname" value="">
+      <input type="password" name="password" value="">
+      <input type="submit" name="" value="登陆">
+    </form>
+    <form  action="/users/reg" method="post">
+      <input type="text" name="loginname" value="">
+      <input type="password" name="password" value="">
+      <input type="password" name="confirm" value="">
+      <input type="submit" name="" value="注册">
+    </form>
+
+    <% } %>
+  </body>
+</html>

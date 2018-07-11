@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <title>博客主页</title>
+      <link rel="stylesheet" href="/stylesheets/main.css">
+    </head>
+
+    <body>
+      <div class="header">
+        <nav>
+          <div class="logo">
+            <a href="#">Logo</a>
+          </div>
+          <ul>
+            <li><a href="">HOME</a></li>
+            <li><a href="">ABOUT</a></li>
+            <li><a href="">SAMPLE POST</a></li>
+            <li><a href="">CONTACT</a></li>
+          </ul>
+        </nav>
+        <div class="head_content">
+          <h1>Clean Blog</h1>
+          <p>A Clean Blog Theme by Start Bootstrap</p>
+        </div>
+      </div>
+      <div class="content">
+        <div class="lol">
+          <%if(user){%>
+            <h1><%=user.id%>已登录</h1>
+            <a href="/page/logout">退出</a>
+            <%}else{%>
+
+              <div class="login">
+
+              <form class="reg" action="/page/reg" method="post">
+                <p>帐号</p>
+                <input type="text" name="id" value="">
+                <p>密码</p>
+                <input type="text" name="password" value="">
+                <p>确认密码</p>
+                <input type="text" name="password1" value="">
+                <img src="/page/vimg" alt="">
+                <input type="text" name="vnum" value="">
+                <input type="submit" name="" value="注册">
+              </form>
+              <form class="login" action="/page/login" method="post">
+                <p>帐号</p>
+                <input type="text" name="id" value="">
+                <p>密码</p>
+                <input type="text" name="password" value="">
+                <%= firstnum%> + <%=secondnum%> = <input type="text" name="num" value="">
+                <input type="submit" name="" value="登录">
+              </form>
+              </div>
+              <%}%>
+        </div>
+          <div class="container">
+            <div class="art_iteam">
+              <h2>
+                小标题
+              </h2>
+              <div class="summary">
+                文章概括
+              </div>
+              <div class="info">
+                作者信息
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="art_iteam">
+              <h2>
+                <%= title%>
+              </h2>
+              <div class="summary">
+                <%= content%>
+              </div>
+              <div class="info">
+                <%= user.id%>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+          <% if(user){ %>
+            <div class="msg">
+              <form class="" action="/page/up" method="post">
+                <input type="text" name="title" value="">
+                <br>
+                <textarea name="content" rows="8" cols="80"></textarea>
+                <input type="submit" name="" value="留言">
+              </form>
+            </div>
+          <% } %>
+
+      </div>
+      <div class="footer">
+        <div class="item_group">
+          <ul>
+            <li><a href="">item1</a></li>
+            <li><a href="">item2</a></li>
+            <li><a href="">item3</a></li>
+            <li><a href="">item4</a></li>
+          </ul>
+        </div>
+      </div>
+  </body>
+</html>
